@@ -33,19 +33,21 @@ class LoginView: UIViewCodable {
 
   lazy var userTextField: TextFieldContainer = {
     let container = TextFieldContainer()
-    container.label.text = "Usuario"
+    container.label.text = "Email"
+    container.textField.keyboardType = .emailAddress
     return container
   }()
 
   lazy var passwordTextField: TextFieldContainer = {
     let container = TextFieldContainer()
     container.label.text = "Senha"
+    container.textField.isSecureTextEntry = true
     return container
   }()
 
   lazy var loginButton: UIButton = {
     let button = UIButton(configuration: .filled(),primaryAction: .none)
-    button.setTitle("Logar", for: .normal)
+    button.setTitle("Entrar", for: .normal)
     return button
   }()
 
