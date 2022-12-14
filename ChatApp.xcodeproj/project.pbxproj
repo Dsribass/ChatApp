@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		951521A42948B62800FF6175 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 951521A32948B62800FF6175 /* SnapKit */; };
 		951521A72948BDAF00FF6175 /* TextFieldContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951521A62948BDAF00FF6175 /* TextFieldContainer.swift */; };
+		951521AA2948F7A900FF6175 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951521A92948F7A900FF6175 /* SignUpViewController.swift */; };
+		951521AC2948F7C100FF6175 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951521AB2948F7C100FF6175 /* SignUpView.swift */; };
 		95735D37294265DD0031B2C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95735D36294265DD0031B2C4 /* LoginViewController.swift */; };
 		95735D39294265F50031B2C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95735D38294265F50031B2C4 /* LoginView.swift */; };
 		95F041D129423B2900818D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D029423B2900818D6B /* AppDelegate.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		951521A62948BDAF00FF6175 /* TextFieldContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContainer.swift; sourceTree = "<group>"; };
+		951521A92948F7A900FF6175 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		951521AB2948F7C100FF6175 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		95735D36294265DD0031B2C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		95735D38294265F50031B2C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		95F041CE29423B2900818D6B /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,9 +65,19 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		951521A82948F78D00FF6175 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				951521A92948F7A900FF6175 /* SignUpViewController.swift */,
+				951521AB2948F7C100FF6175 /* SignUpView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		95735D34294263BF0031B2C4 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				951521A82948F78D00FF6175 /* SignUp */,
 				95735D35294265AB0031B2C4 /* Login */,
 			);
 			path = Auth;
@@ -229,6 +243,8 @@
 				95F041D129423B2900818D6B /* AppDelegate.swift in Sources */,
 				95735D37294265DD0031B2C4 /* LoginViewController.swift in Sources */,
 				95F041D329423B2900818D6B /* SceneDelegate.swift in Sources */,
+				951521AC2948F7C100FF6175 /* SignUpView.swift in Sources */,
+				951521AA2948F7A900FF6175 /* SignUpViewController.swift in Sources */,
 				95F041F229423FD100818D6B /* UIViewCodable.swift in Sources */,
 				951521A72948BDAF00FF6175 /* TextFieldContainer.swift in Sources */,
 			);
