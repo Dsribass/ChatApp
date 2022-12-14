@@ -9,6 +9,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
+  var coordinator: AppCoordinator?
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -18,9 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   private func getAppWindow(windowScene: UIWindowScene) -> UIWindow {
     let safeWindow = UIWindow(windowScene: windowScene)
+    let navigation =  UINavigationController()
+
     safeWindow.frame = UIScreen.main.bounds
     safeWindow.makeKeyAndVisible()
-    safeWindow.rootViewController = SignUpViewController()
+    safeWindow.rootViewController = navigation
+
+    coordinator = AppCoordinator(navigationController: navigation)
+    coordinator?.start()
 
     return safeWindow
   }
