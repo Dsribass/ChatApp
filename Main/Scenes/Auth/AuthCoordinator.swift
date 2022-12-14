@@ -16,6 +16,12 @@ class AuthCoordinator: Coordinator {
   }
 
   func start() {
-    navigationController.pushViewController(LoginViewController(), animated: false)
+    navigationController.pushViewController(LoginViewController(router: self), animated: false)
+  }
+}
+
+extension AuthCoordinator: LoginViewRouter {
+  func navigateToSignUpPage() {
+    navigationController.pushViewController(SignUpViewController(), animated: true)
   }
 }
