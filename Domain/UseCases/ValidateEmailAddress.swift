@@ -8,11 +8,13 @@
 import Foundation
 
 public protocol ValidateEmailAddressUseCase {
-  func execute(email: String) -> InputValidationResult
+  func execute(email: String) -> ValidationResult
 }
 
 public class ValidateEmailAddress: ValidateEmailAddressUseCase {
-  public func execute(email: String) -> InputValidationResult {
+  public init() {}
+
+  public func execute(email: String) -> ValidationResult {
     if email.isEmpty {
       return .empty
     }
@@ -29,8 +31,4 @@ public class ValidateEmailAddress: ValidateEmailAddressUseCase {
 
     return predicate.evaluate(with: email) ? .valid : .invalid
   }
-}
-
-public enum InputValidationResult {
-  case valid, empty, invalid
 }
