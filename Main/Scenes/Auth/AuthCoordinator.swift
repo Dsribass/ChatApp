@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Domain
 
 class AuthCoordinator: Coordinator {
   var childCoordinators = [Coordinator]()
@@ -16,7 +17,15 @@ class AuthCoordinator: Coordinator {
   }
 
   func start() {
-    navigationController.pushViewController(LoginViewController(router: self), animated: false)
+    let viewModel = LoginViewModel(
+      validateEmail: ValidateEmailAddress(),
+      validatePassword: ValidatePassword())
+
+    navigationController.pushViewController(
+      LoginViewController(
+        router: self,
+        viewModel: viewModel),
+      animated: false)
   }
 }
 

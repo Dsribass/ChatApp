@@ -8,12 +8,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Domain
 
 class LoginViewController: SceneViewController<LoginView> {
   private let router: LoginViewRouter
+  private let viewModel: LoginViewModel
 
-  init(router: LoginViewRouter) {
+  init(router: LoginViewRouter, viewModel: LoginViewModel) {
     self.router = router
+    self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -26,13 +29,45 @@ class LoginViewController: SceneViewController<LoginView> {
     setupObservables()
   }
 
-  func setupObservables() {
+  private func setupObservables() {
+    contentView.loginButton.rx.tap
+      .map { [unowned self] _ in
+        return (
+          email: contentView.emailTextFieldContainer.textField.text ?? "",
+          password: contentView.passwordTextFieldContainer.textField.text ?? "")
+      }
+      .bind(to: viewModel.onClickSubmitButtonSubject)
+      .disposed(by: bag)
+
     contentView.registerButton.rx.tap
       .bind { [unowned self] _ in  router.navigateToSignUpPage() }
+      .disposed(by: bag)
+
+    viewModel.onEmailStatusSubject
+      .bind { [unowned self] status in
+        contentView.emailTextFieldContainer.status = status.toTextFieldStatus()
+      }
+      .disposed(by: bag)
+
+    viewModel.onPasswordStatusSubject
+      .bind { [unowned self] status in
+        contentView.passwordTextFieldContainer.status = status.toTextFieldStatus()
+      }
       .disposed(by: bag)
   }
 }
 
 protocol LoginViewRouter {
   func navigateToSignUpPage()
+}
+
+private extension ValidationResult {
+  func toTextFieldStatus() -> TextFieldContainer.Status {
+    switch self {
+    case .valid: return .valid
+    case .empty: return .empty
+    case .invalid: return .invalid
+    case .invalidLength: return .invalid
+    }
+  }
 }

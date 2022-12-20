@@ -31,14 +31,14 @@ class LoginView: UIViewCodable {
     return stack
   }()
 
-  lazy var userTextField: TextFieldContainer = {
+  lazy var emailTextFieldContainer: TextFieldContainer = {
     let container = TextFieldContainer()
     container.label.text = "Email"
     container.textField.keyboardType = .emailAddress
     return container
   }()
 
-  lazy var passwordTextField: TextFieldContainer = {
+  lazy var passwordTextFieldContainer: TextFieldContainer = {
     let container = TextFieldContainer()
     container.label.text = "Senha"
     container.textField.isSecureTextEntry = true
@@ -71,8 +71,8 @@ class LoginView: UIViewCodable {
     contentView.addSubview(title)
     contentView.addSubview(form)
 
-    form.addArrangedSubview(userTextField)
-    form.addArrangedSubview(passwordTextField)
+    form.addArrangedSubview(emailTextFieldContainer)
+    form.addArrangedSubview(passwordTextFieldContainer)
 
     contentView.addSubview(loginButton)
     contentView.addSubview(registerButton)
@@ -124,5 +124,24 @@ class LoginView: UIViewCodable {
 
   override func additionalConfigurations() {
     super.additionalConfigurations()
+
+    emailTextFieldContainer.textField.returnKeyType = .next
+    passwordTextFieldContainer.textField.returnKeyType = .done
+
+    emailTextFieldContainer.textField.delegate = self
+    passwordTextFieldContainer.textField.delegate = self
+  }
+}
+
+extension LoginView: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    switch textField {
+    case emailTextFieldContainer.textField:
+      passwordTextFieldContainer.textField.becomeFirstResponder()
+    default:
+      textField.resignFirstResponder()
+    }
+
+    return false
   }
 }

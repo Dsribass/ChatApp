@@ -34,6 +34,7 @@
 		95F041EE29423EDF00818D6B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95F041ED29423EDF00818D6B /* RxSwift */; };
 		95F041F029423EEE00818D6B /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041EF29423EEE00818D6B /* SceneViewController.swift */; };
 		95F041F229423FD100818D6B /* UIViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041F129423FD100818D6B /* UIViewCodable.swift */; };
+		95F4DE38294CEB63004176AF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4DE37294CEB63004176AF /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		95F041E629423D8F00818D6B /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		95F041EF29423EEE00818D6B /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 		95F041F129423FD100818D6B /* UIViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCodable.swift; sourceTree = "<group>"; };
+		95F4DE37294CEB63004176AF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			children = (
 				95735D36294265DD0031B2C4 /* LoginViewController.swift */,
 				95735D38294265F50031B2C4 /* LoginView.swift */,
+				95F4DE37294CEB63004176AF /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 			files = (
 				951521B1294A0EDC00FF6175 /* AppCoordinator.swift in Sources */,
 				951521B3294A3E2D00FF6175 /* AuthCoordinator.swift in Sources */,
+				95F4DE38294CEB63004176AF /* LoginViewModel.swift in Sources */,
 				95F041F029423EEE00818D6B /* SceneViewController.swift in Sources */,
 				95F041E729423D8F00818D6B /* ViewCodable.swift in Sources */,
 				95735D39294265F50031B2C4 /* LoginView.swift in Sources */,
