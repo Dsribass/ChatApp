@@ -36,20 +36,22 @@ class LoginViewController: SceneViewController<LoginView> {
           email: contentView.emailTextFieldContainer.textField.text ?? "",
           password: contentView.passwordTextFieldContainer.textField.text ?? "")
       }
-      .bind(to: viewModel.onClickSubmitButtonSubject)
+      .bind { [unowned self] email, password in
+        viewModel.login(withEmail: email, andPassword: password)
+      }
       .disposed(by: bag)
 
     contentView.registerButton.rx.tap
       .bind { [unowned self] _ in  router.navigateToSignUpPage() }
       .disposed(by: bag)
 
-    viewModel.onEmailStatusSubject
+    viewModel.onEmailStatus
       .bind { [unowned self] status in
         contentView.emailTextFieldContainer.status = status.toTextFieldStatus()
       }
       .disposed(by: bag)
 
-    viewModel.onPasswordStatusSubject
+    viewModel.onPasswordStatus
       .bind { [unowned self] status in
         contentView.passwordTextFieldContainer.status = status.toTextFieldStatus()
       }

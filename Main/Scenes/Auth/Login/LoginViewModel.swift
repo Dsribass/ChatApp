@@ -16,17 +16,20 @@ class LoginViewModel {
   private let bag = DisposeBag()
 
   typealias EmailAndPassword = (email: String, password: String)
-  let onClickSubmitButtonSubject = PublishSubject<EmailAndPassword>()
-  var onClickSubmitButton: Observable<EmailAndPassword> { onClickSubmitButtonSubject }
+  private let onLoginSubject = PublishSubject<EmailAndPassword>()
+  var onLogin: Observable<EmailAndPassword> { onLoginSubject }
 
-  let onEmailStatusSubject = BehaviorSubject<ValidationResult>(value: .valid)
-  let onPasswordStatusSubject = BehaviorSubject<ValidationResult>(value: .valid)
+  private let onEmailStatusSubject = BehaviorSubject<ValidationResult>(value: .valid)
+  var onEmailStatus: Observable<ValidationResult> { onEmailStatusSubject }
+
+  private let onPasswordStatusSubject = BehaviorSubject<ValidationResult>(value: .valid)
+  var onPasswordStatus: Observable<ValidationResult> { onPasswordStatusSubject }
 
   init(validateEmail: ValidateEmailAddressUseCase, validatePassword: ValidatePasswordUseCase) {
     self.validateEmail = validateEmail
     self.validatePassword = validatePassword
 
-    onClickSubmitButton
+    onLogin
       .map { [weak self] email, password in
         let emailValidation = validateEmail.execute(email: email)
         let passwordValidation = validatePassword.execute(password: password)
@@ -38,5 +41,9 @@ class LoginViewModel {
       }
       .bind { _ in }
       .disposed(by: bag)
+  }
+
+  func login(withEmail email: String, andPassword password: String) {
+    onLoginSubject.onNext((email, password))
   }
 }

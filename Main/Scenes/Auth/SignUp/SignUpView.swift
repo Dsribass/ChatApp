@@ -11,7 +11,7 @@ import SnapKit
 class SignUpView: UIViewCodable {
   lazy var title: UILabel = {
     let label = UILabel()
-    label.font = UIFont.preferredFont(forTextStyle: .title1)
+    label.font = UIFont.boldSystemFont(ofSize: 32)
     label.text = "Cadastro"
     return label
   }()
@@ -45,14 +45,6 @@ class SignUpView: UIViewCodable {
     return container
   }()
 
-  lazy var confirmPasswordTextField: TextFieldContainer = {
-    let container = TextFieldContainer()
-    container.label.text = "Confirmar Senha"
-    container.textField.keyboardType = .default
-    container.textField.isSecureTextEntry = true
-    return container
-  }()
-
   lazy var registerButton: UIButton = {
     let button = UIButton(configuration: .filled(),primaryAction: .none)
     button.setTitle("Cadastrar", for: .normal)
@@ -72,7 +64,6 @@ class SignUpView: UIViewCodable {
     form.addArrangedSubview(nameTextField)
     form.addArrangedSubview(emailTextField)
     form.addArrangedSubview(passwordTextField)
-    form.addArrangedSubview(confirmPasswordTextField)
 
     addSubview(registerButton)
   }
@@ -97,5 +88,32 @@ class SignUpView: UIViewCodable {
       make.leading.equalTo(self).offset(24)
       make.trailing.equalTo(self).offset(-24)
     }
+  }
+
+  override func additionalConfigurations() {
+    super.additionalConfigurations()
+
+    nameTextField.textField.delegate = self
+    emailTextField.textField.delegate = self
+    passwordTextField.textField.delegate = self
+
+    nameTextField.textField.returnKeyType = .next
+    emailTextField.textField.returnKeyType = .next
+    passwordTextField.textField.returnKeyType = .done
+  }
+}
+
+extension SignUpView: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    switch textField {
+    case nameTextField.textField:
+      emailTextField.textField.becomeFirstResponder()
+    case emailTextField.textField:
+      passwordTextField.textField.becomeFirstResponder()
+    default:
+      textField.resignFirstResponder()
+    }
+
+    return false
   }
 }
