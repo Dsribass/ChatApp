@@ -62,14 +62,3 @@ class LoginViewController: SceneViewController<LoginView> {
 protocol LoginViewRouter {
   func navigateToSignUpPage()
 }
-
-private extension ValidationResult {
-  func toTextFieldStatus() -> TextFieldContainer.Status {
-    switch self {
-    case .valid: return .valid
-    case .empty: return .empty
-    case .invalid: return .invalid
-    case .invalidLength: return .invalid
-    }
-  }
-}
