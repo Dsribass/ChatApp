@@ -19,7 +19,8 @@ class AuthCoordinator: Coordinator {
   func start() {
     let viewModel = LoginViewModel(
       validateEmail: ValidateEmailAddress(),
-      validatePassword: ValidatePassword())
+      validatePassword: ValidatePassword(),
+      logInUser: LogInUser())
 
     navigationController.pushViewController(
       LoginViewController(
@@ -34,7 +35,8 @@ extension AuthCoordinator: LoginViewRouter {
     let viewModel = SignUpViewModel(
       validateEmail: ValidateEmailAddress(),
       validateName: ValidateName(),
-      validatePassword: ValidatePassword())
+      validatePassword: ValidatePassword(),
+      signUpUser: SignUpUser())
     navigationController.pushViewController(SignUpViewController(viewModel: viewModel), animated: true)
   }
 }

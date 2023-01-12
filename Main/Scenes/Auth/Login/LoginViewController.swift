@@ -37,6 +37,7 @@ class LoginViewController: SceneViewController<LoginView> {
           password: contentView.passwordTextFieldContainer.textField.text ?? "")
       }
       .bind { [unowned self] email, password in
+        contentView.errorMessage.text = ""
         viewModel.login(withEmail: email, andPassword: password)
       }
       .disposed(by: bag)
@@ -54,6 +55,19 @@ class LoginViewController: SceneViewController<LoginView> {
     viewModel.onPasswordStatus
       .bind { [unowned self] status in
         contentView.passwordTextFieldContainer.status = status.toTextFieldStatus()
+      }
+      .disposed(by: bag)
+
+    viewModel.onLoginAction
+      .bind { [unowned self] action in
+        switch action {
+        case .loginSuccess:
+          print("Sucesso")
+        case .loginFailed:
+          contentView.errorMessage.text = "Email ou senha incorretos!"
+        case .loginError:
+          contentView.errorMessage.text = "Desculpe, ocorreu algum erro. Tente novamente"
+        }
       }
       .disposed(by: bag)
   }

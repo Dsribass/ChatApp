@@ -12,6 +12,7 @@ class SignUpViewModel {
   private let validateEmail: ValidateEmailAddressUseCase
   private let validateName: ValidateNameUseCase
   private let validatePassword: ValidatePasswordUseCase
+  private let signUpUser: SignUpUserUseCase
 
   private let bag = DisposeBag()
 
@@ -27,34 +28,55 @@ class SignUpViewModel {
   private let onPasswordStatusSubject = BehaviorSubject<ValidationResult>(value: .valid)
   var onPasswordStatus: Observable<ValidationResult> { onPasswordStatusSubject }
 
+  private let onSignUpActionSubject = PublishSubject<SignUpAction>()
+  var onSignUpAction: Observable<SignUpAction> { onSignUpActionSubject }
+
   init(
     validateEmail: ValidateEmailAddressUseCase,
     validateName: ValidateNameUseCase,
-    validatePassword: ValidatePasswordUseCase
+    validatePassword: ValidatePasswordUseCase,
+    signUpUser: SignUpUserUseCase
   ) {
     self.validateEmail = validateEmail
     self.validateName = validateName
     self.validatePassword = validatePassword
+    self.signUpUser = signUpUser
 
+    listenObservables()
+  }
+
+  private func listenObservables() {
     onClickSubmitButton
-      .map { [weak self] name, email, password in
+      .filter { [unowned self] name, email, password in
         let nameValidation = validateName.execute(name: name)
         let emailValidation = validateEmail.execute(email: email)
         let passwordValidation = validatePassword.execute(password: password)
 
-        self?.onNameStatusSubject.onNext(nameValidation)
-        self?.onEmailStatusSubject.onNext(emailValidation)
-        self?.onPasswordStatusSubject.onNext(passwordValidation)
+        onNameStatusSubject.onNext(nameValidation)
+        onEmailStatusSubject.onNext(emailValidation)
+        onPasswordStatusSubject.onNext(passwordValidation)
 
         return nameValidation == .valid &&
         emailValidation == .valid &&
         passwordValidation == .valid
       }
-      .bind { _ in }
+      .bind { [unowned self] name, email, password in
+        signUpUser.execute(withName: name, email: email, andPassword: password)
+          .subscribe { [unowned self] in
+            onSignUpActionSubject.onNext(.signUpSuccess)
+          } onError: { [unowned self] error in
+            onSignUpActionSubject.onNext(.signUpError)
+          }
+          .disposed(by: bag)
+      }
       .disposed(by: bag)
   }
 
   func register(withName name: String, email: String, andPassword password: String) {
     onClickSubmitButtonSubject.onNext((name: name, email: email, password: password))
   }
+}
+
+enum SignUpAction {
+  case signUpSuccess, signUpError
 }

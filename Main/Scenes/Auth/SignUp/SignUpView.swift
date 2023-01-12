@@ -34,6 +34,7 @@ class SignUpView: UIViewCodable {
     let container = TextFieldContainer()
     container.label.text = "Email"
     container.textField.keyboardType = .emailAddress
+    container.textField.autocapitalizationType = .none
     return container
   }()
 
@@ -43,6 +44,13 @@ class SignUpView: UIViewCodable {
     container.textField.keyboardType = .default
     container.textField.isSecureTextEntry = true
     return container
+  }()
+
+  lazy var errorMessage: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.preferredFont(forTextStyle: .caption1)
+    label.textColor = .systemRed
+    return label
   }()
 
   lazy var registerButton: UIButton = {
@@ -65,6 +73,7 @@ class SignUpView: UIViewCodable {
     form.addArrangedSubview(emailTextField)
     form.addArrangedSubview(passwordTextField)
 
+    addSubview(errorMessage)
     addSubview(registerButton)
   }
 
@@ -83,8 +92,14 @@ class SignUpView: UIViewCodable {
       make.trailing.equalTo(self).offset(-24)
     }
 
-    registerButton.snp.makeConstraints { make in
+    errorMessage.snp.makeConstraints { make in
       make.top.equalTo(form.snp.bottom).offset(24)
+      make.leading.equalTo(self).offset(24)
+      make.trailing.equalTo(self).offset(-24)
+    }
+
+    registerButton.snp.makeConstraints { make in
+      make.top.equalTo(errorMessage.snp.bottom).offset(24)
       make.leading.equalTo(self).offset(24)
       make.trailing.equalTo(self).offset(-24)
     }

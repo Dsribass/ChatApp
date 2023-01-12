@@ -35,6 +35,7 @@ class LoginView: UIViewCodable {
     let container = TextFieldContainer()
     container.label.text = "Email"
     container.textField.keyboardType = .emailAddress
+    container.textField.autocapitalizationType = .none
     return container
   }()
 
@@ -43,6 +44,13 @@ class LoginView: UIViewCodable {
     container.label.text = "Senha"
     container.textField.isSecureTextEntry = true
     return container
+  }()
+
+  lazy var errorMessage: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.preferredFont(forTextStyle: .caption1)
+    label.textColor = .systemRed
+    return label
   }()
 
   lazy var loginButton: UIButton = {
@@ -74,6 +82,7 @@ class LoginView: UIViewCodable {
     form.addArrangedSubview(emailTextFieldContainer)
     form.addArrangedSubview(passwordTextFieldContainer)
 
+    contentView.addSubview(errorMessage)
     contentView.addSubview(loginButton)
     contentView.addSubview(registerButton)
   }
@@ -108,8 +117,14 @@ class LoginView: UIViewCodable {
       make.trailing.equalTo(contentView)
     }
 
-    loginButton.snp.makeConstraints { make in
+    errorMessage.snp.makeConstraints { make in
       make.top.equalTo(form.snp.bottom).offset(32)
+      make.leading.equalTo(contentView)
+      make.trailing.equalTo(contentView)
+    }
+
+    loginButton.snp.makeConstraints { make in
+      make.top.equalTo(errorMessage.snp.bottom).offset(32)
       make.leading.equalTo(contentView)
       make.trailing.equalTo(contentView)
     }

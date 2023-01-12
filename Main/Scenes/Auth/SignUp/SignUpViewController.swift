@@ -54,5 +54,16 @@ class SignUpViewController: SceneViewController<SignUpView> {
         viewModel.register(withName: name, email: email, andPassword: password)
       }
       .disposed(by: bag)
+
+    viewModel.onSignUpAction
+      .bind { [unowned self] action in
+        switch action {
+        case .signUpSuccess:
+          print("Sucesso")
+        case .signUpError:
+          contentView.errorMessage.text = "Erro ao se registrar. Tente Novamente."
+        }
+      }
+      .disposed(by: bag)
   }
 }
