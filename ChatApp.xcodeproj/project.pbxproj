@@ -28,6 +28,8 @@
 		95704BDF2967100F00E32E55 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 95704BDE2967100F00E32E55 /* FirebaseAuth */; };
 		95735D37294265DD0031B2C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95735D36294265DD0031B2C4 /* LoginViewController.swift */; };
 		95735D39294265F50031B2C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95735D38294265F50031B2C4 /* LoginView.swift */; };
+		958DE89A29703F0D00BEC419 /* LogInUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE89929703F0D00BEC419 /* LogInUser.swift */; };
+		958DE89C2970456F00BEC419 /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE89B2970456F00BEC419 /* SignUpUser.swift */; };
 		95F041D129423B2900818D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D029423B2900818D6B /* AppDelegate.swift */; };
 		95F041D329423B2900818D6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D229423B2900818D6B /* SceneDelegate.swift */; };
 		95F041DA29423B2A00818D6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F041D929423B2A00818D6B /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		95704BDB29670F2400E32E55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95735D36294265DD0031B2C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		95735D38294265F50031B2C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		958DE89929703F0D00BEC419 /* LogInUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInUser.swift; sourceTree = "<group>"; };
+		958DE89B2970456F00BEC419 /* SignUpUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
 		95F041CE29423B2900818D6B /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F041D029423B2900818D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F041D229423B2900818D6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 				951521C7294A5C6100FF6175 /* ValidateEmailAddress.swift */,
 				9562B86B294BB2FA00F6BCC3 /* ValidatePassword.swift */,
 				9562B86D294BB43C00F6BCC3 /* ValidateName.swift */,
+				958DE89929703F0D00BEC419 /* LogInUser.swift */,
+				958DE89B2970456F00BEC419 /* SignUpUser.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -449,6 +455,8 @@
 				9562B86E294BB43C00F6BCC3 /* ValidateName.swift in Sources */,
 				951521C8294A5C6100FF6175 /* ValidateEmailAddress.swift in Sources */,
 				9562B869294BB28300F6BCC3 /* ValidationResult.swift in Sources */,
+				958DE89A29703F0D00BEC419 /* LogInUser.swift in Sources */,
+				958DE89C2970456F00BEC419 /* SignUpUser.swift in Sources */,
 				9562B86C294BB2FA00F6BCC3 /* ValidatePassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
