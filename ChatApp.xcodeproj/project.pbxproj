@@ -30,6 +30,8 @@
 		95735D39294265F50031B2C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95735D38294265F50031B2C4 /* LoginView.swift */; };
 		958DE89A29703F0D00BEC419 /* LogInUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE89929703F0D00BEC419 /* LogInUser.swift */; };
 		958DE89C2970456F00BEC419 /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE89B2970456F00BEC419 /* SignUpUser.swift */; };
+		958DE89F2970BA6700BEC419 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE89E2970BA6700BEC419 /* AuthRepository.swift */; };
+		958DE8A22970BB1400BEC419 /* FirebaseAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8A12970BB1400BEC419 /* FirebaseAuthRepository.swift */; };
 		95F041D129423B2900818D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D029423B2900818D6B /* AppDelegate.swift */; };
 		95F041D329423B2900818D6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D229423B2900818D6B /* SceneDelegate.swift */; };
 		95F041DA29423B2A00818D6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F041D929423B2A00818D6B /* Assets.xcassets */; };
@@ -82,6 +84,8 @@
 		95735D38294265F50031B2C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		958DE89929703F0D00BEC419 /* LogInUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInUser.swift; sourceTree = "<group>"; };
 		958DE89B2970456F00BEC419 /* SignUpUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
+		958DE89E2970BA6700BEC419 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		958DE8A12970BB1400BEC419 /* FirebaseAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthRepository.swift; sourceTree = "<group>"; };
 		95F041CE29423B2900818D6B /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F041D029423B2900818D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F041D229423B2900818D6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		951521BA294A5BDC00FF6175 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				958DE89D2970BA4E00BEC419 /* Repository */,
 				9562B867294BB27600F6BCC3 /* Model */,
 				951521C6294A5C3E00FF6175 /* UseCases */,
 			);
@@ -225,6 +230,22 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		958DE89D2970BA4E00BEC419 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				958DE89E2970BA6700BEC419 /* AuthRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		958DE8A02970BB0600BEC419 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				958DE8A12970BB1400BEC419 /* FirebaseAuthRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		95F041AA294238D400818D6B = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +270,7 @@
 		95F041CF29423B2900818D6B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				958DE8A02970BB0600BEC419 /* Repository */,
 				951521AD2949FF0F00FF6175 /* Utils */,
 				95F041E229423B3200818D6B /* Application */,
 				95F041E329423B4000818D6B /* Scenes */,
@@ -455,6 +477,7 @@
 				9562B86E294BB43C00F6BCC3 /* ValidateName.swift in Sources */,
 				951521C8294A5C6100FF6175 /* ValidateEmailAddress.swift in Sources */,
 				9562B869294BB28300F6BCC3 /* ValidationResult.swift in Sources */,
+				958DE89F2970BA6700BEC419 /* AuthRepository.swift in Sources */,
 				958DE89A29703F0D00BEC419 /* LogInUser.swift in Sources */,
 				958DE89C2970456F00BEC419 /* SignUpUser.swift in Sources */,
 				9562B86C294BB2FA00F6BCC3 /* ValidatePassword.swift in Sources */,
@@ -482,6 +505,7 @@
 				95735D39294265F50031B2C4 /* LoginView.swift in Sources */,
 				95F041D129423B2900818D6B /* AppDelegate.swift in Sources */,
 				95704BDA296704D800E32E55 /* Utils.swift in Sources */,
+				958DE8A22970BB1400BEC419 /* FirebaseAuthRepository.swift in Sources */,
 				95704BD82953A6EC00E32E55 /* SignUpViewModel.swift in Sources */,
 				95735D37294265DD0031B2C4 /* LoginViewController.swift in Sources */,
 				95F041D329423B2900818D6B /* SceneDelegate.swift in Sources */,
