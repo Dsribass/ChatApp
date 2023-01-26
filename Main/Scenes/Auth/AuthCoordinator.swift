@@ -17,26 +17,18 @@ class AuthCoordinator: Coordinator {
   }
 
   func start() {
-    let viewModel = LoginViewModel(
-      validateEmail: ValidateEmailAddress(),
-      validatePassword: ValidatePassword(),
-      logInUser: LogInUser())
-
-    navigationController.pushViewController(
-      LoginViewController(
+    navigationController.setViewControllers(
+      [LoginViewController(
         router: self,
-        viewModel: viewModel),
-      animated: false)
+        viewModel: Factory.makeLogInViewModel()
+      )],animated: true)
   }
 }
 
 extension AuthCoordinator: LoginViewRouter {
   func navigateToSignUpPage() {
-    let viewModel = SignUpViewModel(
-      validateEmail: ValidateEmailAddress(),
-      validateName: ValidateName(),
-      validatePassword: ValidatePassword(),
-      signUpUser: SignUpUser())
-    navigationController.pushViewController(SignUpViewController(viewModel: viewModel), animated: true)
+    navigationController.pushViewController(
+      SignUpViewController(viewModel: Factory.makeSignUpViewModel()),
+      animated: true)
   }
 }
