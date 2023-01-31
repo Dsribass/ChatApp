@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     safeWindow.makeKeyAndVisible()
     safeWindow.rootViewController = navigation
 
-    coordinator = AppCoordinator(navigationController: navigation)
+    coordinator = AppCoordinator(navigationController: navigation, listenUserAuthChanges: Factory.makeListenUserAuthChanges())
     coordinator?.start()
 
     return safeWindow

@@ -34,6 +34,9 @@
 		958DE8A22970BB1400BEC419 /* FirebaseAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8A12970BB1400BEC419 /* FirebaseAuthRepository.swift */; };
 		958DE8A42977215000BEC419 /* ListenUserAuthChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8A32977215000BEC419 /* ListenUserAuthChanges.swift */; };
 		958DE8A62982FA1300BEC419 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8A52982FA1300BEC419 /* Factory.swift */; };
+		958DE8AA298997F900BEC419 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8A9298997F900BEC419 /* ChatListViewController.swift */; };
+		958DE8AC2989992C00BEC419 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8AB2989992C00BEC419 /* ChatListView.swift */; };
+		958DE8AE2989996900BEC419 /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8AD2989996900BEC419 /* ChatCoordinator.swift */; };
 		95F041D129423B2900818D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D029423B2900818D6B /* AppDelegate.swift */; };
 		95F041D329423B2900818D6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D229423B2900818D6B /* SceneDelegate.swift */; };
 		95F041DA29423B2A00818D6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F041D929423B2A00818D6B /* Assets.xcassets */; };
@@ -90,6 +93,9 @@
 		958DE8A12970BB1400BEC419 /* FirebaseAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthRepository.swift; sourceTree = "<group>"; };
 		958DE8A32977215000BEC419 /* ListenUserAuthChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenUserAuthChanges.swift; sourceTree = "<group>"; };
 		958DE8A52982FA1300BEC419 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		958DE8A9298997F900BEC419 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		958DE8AB2989992C00BEC419 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		958DE8AD2989996900BEC419 /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
 		95F041CE29423B2900818D6B /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F041D029423B2900818D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F041D229423B2900818D6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -252,6 +258,24 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		958DE8A7298997DA00BEC419 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				958DE8A8298997E400BEC419 /* List */,
+				958DE8AD2989996900BEC419 /* ChatCoordinator.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		958DE8A8298997E400BEC419 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				958DE8A9298997F900BEC419 /* ChatListViewController.swift */,
+				958DE8AB2989992C00BEC419 /* ChatListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		95F041AA294238D400818D6B = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +322,7 @@
 		95F041E329423B4000818D6B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				958DE8A7298997DA00BEC419 /* Chat */,
 				95735D34294263BF0031B2C4 /* Auth */,
 				95F041E529423D7E00818D6B /* Common */,
 			);
@@ -506,6 +531,8 @@
 			files = (
 				951521B1294A0EDC00FF6175 /* AppCoordinator.swift in Sources */,
 				951521B3294A3E2D00FF6175 /* AuthCoordinator.swift in Sources */,
+				958DE8AE2989996900BEC419 /* ChatCoordinator.swift in Sources */,
+				958DE8AA298997F900BEC419 /* ChatListViewController.swift in Sources */,
 				95F4DE38294CEB63004176AF /* LoginViewModel.swift in Sources */,
 				95F041F029423EEE00818D6B /* SceneViewController.swift in Sources */,
 				95F041E729423D8F00818D6B /* ViewCodable.swift in Sources */,
@@ -519,6 +546,7 @@
 				951521AF2949FF1800FF6175 /* Coordinator.swift in Sources */,
 				951521AC2948F7C100FF6175 /* SignUpView.swift in Sources */,
 				958DE8A62982FA1300BEC419 /* Factory.swift in Sources */,
+				958DE8AC2989992C00BEC419 /* ChatListView.swift in Sources */,
 				951521AA2948F7A900FF6175 /* SignUpViewController.swift in Sources */,
 				95F041F229423FD100818D6B /* UIViewCodable.swift in Sources */,
 				951521A72948BDAF00FF6175 /* TextFieldContainer.swift in Sources */,

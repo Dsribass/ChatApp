@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import Foundation
 
 public protocol ListenUserAuthChangesUseCase {
   func execute() -> Observable<UserState>
@@ -19,7 +20,15 @@ public class ListenUserAuthChanges: ListenUserAuthChangesUseCase {
   }
 
   public func execute() -> Observable<UserState> {
-    Observable.just(.loggedIn)
+    Observable.create { observer in
+      observer.onNext(.loggedOut)
+
+      DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        observer.onNext(.loggedIn)
+      }
+
+      return Disposables.create()
+    }
   }
 }
 
