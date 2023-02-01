@@ -12,13 +12,17 @@ public protocol SignUpUserUseCase {
 }
 
 public class SignUpUser: SignUpUserUseCase {
-  public init() {}
+  private let repository: AuthRepository
+
+  public init(repository: AuthRepository) {
+    self.repository = repository
+  }
 
   public func execute(
     withName name: String,
     email: String,
     andPassword password: String
   ) -> Completable {
-    Completable.empty()
+    repository.signUp(withEmail: email, andPassword: password)
   }
 }

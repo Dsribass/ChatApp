@@ -20,18 +20,6 @@ public class ListenUserAuthChanges: ListenUserAuthChangesUseCase {
   }
 
   public func execute() -> Observable<UserState> {
-    Observable.create { observer in
-      observer.onNext(.loggedOut)
-
-      DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-        observer.onNext(.loggedIn)
-      }
-
-      return Disposables.create()
-    }
+    repository.userAuthChanges()
   }
-}
-
-public enum UserState {
-  case loggedIn, loggedOut
 }

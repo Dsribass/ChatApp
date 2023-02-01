@@ -61,12 +61,8 @@ class LoginViewController: SceneViewController<LoginView> {
     viewModel.onLoginAction
       .bind { [unowned self] action in
         switch action {
-        case .loginSuccess:
-          print("Sucesso")
         case .loginFailed:
           contentView.errorMessage.text = "Email ou senha incorretos!"
-        case .loginError:
-          contentView.errorMessage.text = "Desculpe, ocorreu algum erro. Tente novamente"
         }
       }
       .disposed(by: bag)

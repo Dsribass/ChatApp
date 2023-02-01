@@ -55,14 +55,9 @@ class SignUpViewController: SceneViewController<SignUpView> {
       }
       .disposed(by: bag)
 
-    viewModel.onSignUpAction
-      .bind { [unowned self] action in
-        switch action {
-        case .signUpSuccess:
-          print("Sucesso")
-        case .signUpError:
-          contentView.errorMessage.text = "Erro ao se registrar. Tente Novamente."
-        }
+    viewModel.onSignUpError
+      .bind { [unowned self] in
+        contentView.errorMessage.text = "Erro ao se registrar. Tente Novamente."
       }
       .disposed(by: bag)
   }

@@ -28,11 +28,11 @@ enum Factory {
   }
 
   static func makeSignUpUser() -> SignUpUserUseCase {
-    SignUpUser()
+    SignUpUser(repository: makeAuthRepository())
   }
 
   static func makeLogInUser() -> LogInUserUseCase {
-    LogInUser()
+    LogInUser(repository: makeAuthRepository())
   }
 
   static func makeListenUserAuthChanges() -> ListenUserAuthChangesUseCase {

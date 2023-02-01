@@ -54,15 +54,9 @@ class LoginViewModel {
       }
       .bind { [unowned self] email, password in
         self.logInUser.execute(withEmail: email, andPassword: password)
-          .subscribe { [weak self] result in
-            if result == .success {
-              self?.onLoginActionSubject.onNext(.loginSuccess)
-            } else {
-              self?.onLoginActionSubject.onNext(.loginFailed)
-            }
-          } onFailure: { [weak self] _ in
-            self?.onLoginActionSubject.onNext(.loginError)
-          }
+          .subscribe(onError: { [weak self] _ in
+            self?.onLoginActionSubject.onNext(.loginFailed)
+          })
           .disposed(by: bag)
       }
       .disposed(by: bag)
@@ -74,5 +68,5 @@ class LoginViewModel {
 }
 
 enum LoginAction {
-  case loginSuccess, loginFailed, loginError
+  case loginFailed
 }

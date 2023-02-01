@@ -8,28 +8,20 @@
 import RxSwift
 
 public protocol LogInUserUseCase {
-  func execute(withEmail email: String, andPassword password: String) -> Single<LogInResult>
+  func execute(withEmail email: String, andPassword password: String) -> Completable
 }
 
 public class LogInUser: LogInUserUseCase {
-  public init() {}
+  private let repository: AuthRepository
+
+  public init(repository: AuthRepository) {
+    self.repository = repository
+  }
 
   public func execute(
     withEmail email: String,
     andPassword password: String
-  ) -> Single<LogInResult> {
-    let emailMock = "test@test.com"
-    let passwordMock = "12345678"
-
-
-    if emailMock == email && passwordMock == password {
-      return Single.just(.success)
-    }
-
-    return Single.just(.incorrect)
+  ) -> Completable {
+    repository.signIn(withEmail: email, andPassword: password)
   }
-}
-
-public enum LogInResult {
-  case success, incorrect
 }

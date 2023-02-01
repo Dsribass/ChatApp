@@ -28,8 +28,8 @@ class SignUpViewModel {
   private let onPasswordStatusSubject = BehaviorSubject<ValidationResult>(value: .valid)
   var onPasswordStatus: Observable<ValidationResult> { onPasswordStatusSubject }
 
-  private let onSignUpActionSubject = PublishSubject<SignUpAction>()
-  var onSignUpAction: Observable<SignUpAction> { onSignUpActionSubject }
+  private let onSignUpErrorSubject = PublishSubject<Void>()
+  var onSignUpError: Observable<Void> { onSignUpErrorSubject }
 
   init(
     validateEmail: ValidateEmailAddressUseCase,
@@ -62,11 +62,9 @@ class SignUpViewModel {
       }
       .bind { [unowned self] name, email, password in
         signUpUser.execute(withName: name, email: email, andPassword: password)
-          .subscribe { [unowned self] in
-            onSignUpActionSubject.onNext(.signUpSuccess)
-          } onError: { [unowned self] error in
-            onSignUpActionSubject.onNext(.signUpError)
-          }
+          .subscribe(onError: { [weak self] _ in
+            self?.onSignUpErrorSubject.onNext(())
+          })
           .disposed(by: bag)
       }
       .disposed(by: bag)
@@ -75,8 +73,4 @@ class SignUpViewModel {
   func register(withName name: String, email: String, andPassword password: String) {
     onClickSubmitButtonSubject.onNext((name: name, email: email, password: password))
   }
-}
-
-enum SignUpAction {
-  case signUpSuccess, signUpError
 }
