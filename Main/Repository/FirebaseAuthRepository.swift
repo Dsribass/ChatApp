@@ -46,4 +46,18 @@ class FirebaseAuthRepository: AuthRepository {
       return Disposables.create()
     }
   }
+
+  func saveUserName(_ name: String) -> Completable {
+    Completable.create { completable in
+      let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+      changeRequest?.displayName = name
+      changeRequest?.commitChanges { error in
+        if let error = error { completable(.error(error)) }
+
+        completable(.completed)
+      }
+
+      return Disposables.create()
+    }
+  }
 }

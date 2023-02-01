@@ -23,6 +23,8 @@ public class SignUpUser: SignUpUserUseCase {
     email: String,
     andPassword password: String
   ) -> Completable {
-    repository.signUp(withEmail: email, andPassword: password)
+    repository
+      .signUp(withEmail: email, andPassword: password)
+      .andThen(repository.saveUserName(name))
   }
 }
