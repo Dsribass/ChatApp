@@ -37,4 +37,13 @@ class FirebaseAuthRepository: AuthRepository {
       return Disposables.create()
     }
   }
+
+  func userAuthChanges() -> Observable<UserState> {
+    Observable.create { observer in
+      Auth.auth().addStateDidChangeListener { _, user in
+        observer.onNext(user != nil ? .loggedIn : .loggedOut)
+      }
+      return Disposables.create()
+    }
+  }
 }
