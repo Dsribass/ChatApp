@@ -1,5 +1,5 @@
 //
-//  ChatCoordinator.swift
+//  MainCoordinator.swift
 //  Main
 //
 //  Created by Daniel de Souza Ribas on 31/01/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChatCoordinator: Coordinator {
+class MainCoordinator: Coordinator {
   var navigationController: UINavigationController
 
   init(navigationController: UINavigationController) {
@@ -15,6 +15,6 @@ class ChatCoordinator: Coordinator {
   }
 
   func start() {
-    navigationController.setViewControllers([ChatListViewController()], animated: true)
+    navigationController.setViewControllers([ConversationsViewController()], animated: true)
   }
 }

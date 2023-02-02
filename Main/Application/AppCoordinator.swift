@@ -27,7 +27,7 @@ class AppCoordinator: Coordinator {
       .subscribe { [weak self] state in
         switch state {
         case .loggedIn:
-          self?.showChatFlow()
+          self?.showMainFlow()
         case .loggedOut:
           self?.showAuthFlow()
         }
@@ -42,8 +42,8 @@ class AppCoordinator: Coordinator {
     coordinator.start()
   }
 
-  private func showChatFlow() {
-    let coordinator = ChatCoordinator(navigationController: navigationController)
+  private func showMainFlow() {
+    let coordinator = MainCoordinator(navigationController: navigationController)
     coordinator.start()
   }
 }
