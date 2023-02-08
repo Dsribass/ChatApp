@@ -15,6 +15,20 @@ class MainCoordinator: Coordinator {
   }
 
   func start() {
-    navigationController.setViewControllers([ConversationsViewController()], animated: true)
+    navigationController.setViewControllers(
+      [ConversationsViewController(router: self)],
+      animated: true)
+  }
+}
+
+extension MainCoordinator: ConversationsViewRouter {
+  func navigateToSearchView() {
+    let searchViewController = UINavigationController(rootViewController: SearchViewController())
+    searchViewController.modalPresentationStyle = .pageSheet
+    if let sheet = searchViewController.sheetPresentationController {
+      sheet.detents = [.large()]
+    }
+
+    navigationController.viewControllers[0].present(searchViewController, animated: true)
   }
 }

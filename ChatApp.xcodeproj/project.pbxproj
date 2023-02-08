@@ -38,6 +38,8 @@
 		958DE8AC2989992C00BEC419 /* ConversationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8AB2989992C00BEC419 /* ConversationsView.swift */; };
 		958DE8AE2989996900BEC419 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8AD2989996900BEC419 /* MainCoordinator.swift */; };
 		958DE8B0298A021600BEC419 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8AF298A021600BEC419 /* UserState.swift */; };
+		95A07B3B298D3CB400FB29F4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A07B3A298D3CB400FB29F4 /* SearchViewController.swift */; };
+		95A07B3D298D3CC900FB29F4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A07B3C298D3CC900FB29F4 /* SearchView.swift */; };
 		95F041D129423B2900818D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D029423B2900818D6B /* AppDelegate.swift */; };
 		95F041D329423B2900818D6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D229423B2900818D6B /* SceneDelegate.swift */; };
 		95F041DA29423B2A00818D6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F041D929423B2A00818D6B /* Assets.xcassets */; };
@@ -98,6 +100,8 @@
 		958DE8AB2989992C00BEC419 /* ConversationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsView.swift; sourceTree = "<group>"; };
 		958DE8AD2989996900BEC419 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		958DE8AF298A021600BEC419 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
+		95A07B3A298D3CB400FB29F4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		95A07B3C298D3CC900FB29F4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		95F041CE29423B2900818D6B /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F041D029423B2900818D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F041D229423B2900818D6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 		958DE8A7298997DA00BEC419 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				95A07B39298D3C8100FB29F4 /* Search */,
 				958DE8A8298997E400BEC419 /* Conversations */,
 				958DE8AD2989996900BEC419 /* MainCoordinator.swift */,
 			);
@@ -277,6 +282,15 @@
 				958DE8AB2989992C00BEC419 /* ConversationsView.swift */,
 			);
 			path = Conversations;
+			sourceTree = "<group>";
+		};
+		95A07B39298D3C8100FB29F4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				95A07B3A298D3CB400FB29F4 /* SearchViewController.swift */,
+				95A07B3C298D3CC900FB29F4 /* SearchView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		95F041AA294238D400818D6B = {
@@ -539,12 +553,14 @@
 				958DE8AA298997F900BEC419 /* ConversationsViewController.swift in Sources */,
 				95F4DE38294CEB63004176AF /* LoginViewModel.swift in Sources */,
 				95F041F029423EEE00818D6B /* SceneViewController.swift in Sources */,
+				95A07B3D298D3CC900FB29F4 /* SearchView.swift in Sources */,
 				95F041E729423D8F00818D6B /* ViewCodable.swift in Sources */,
 				95735D39294265F50031B2C4 /* LoginView.swift in Sources */,
 				95F041D129423B2900818D6B /* AppDelegate.swift in Sources */,
 				95704BDA296704D800E32E55 /* Utils.swift in Sources */,
 				958DE8A22970BB1400BEC419 /* FirebaseAuthRepository.swift in Sources */,
 				95704BD82953A6EC00E32E55 /* SignUpViewModel.swift in Sources */,
+				95A07B3B298D3CB400FB29F4 /* SearchViewController.swift in Sources */,
 				95735D37294265DD0031B2C4 /* LoginViewController.swift in Sources */,
 				95F041D329423B2900818D6B /* SceneDelegate.swift in Sources */,
 				951521AF2949FF1800FF6175 /* Coordinator.swift in Sources */,
