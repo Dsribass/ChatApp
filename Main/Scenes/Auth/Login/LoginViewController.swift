@@ -49,12 +49,18 @@ class LoginViewController: SceneViewController<LoginView> {
     viewModel.onEmailStatus
       .bind { [unowned self] status in
         contentView.emailTextFieldContainer.status = status.toTextFieldStatus()
+        if contentView.emailTextFieldContainer.status != .valid {
+          contentView.loginButton.shakeButton()
+        }
       }
       .disposed(by: bag)
 
     viewModel.onPasswordStatus
       .bind { [unowned self] status in
         contentView.passwordTextFieldContainer.status = status.toTextFieldStatus()
+        if contentView.passwordTextFieldContainer.status != .valid {
+          contentView.loginButton.shakeButton()
+        }
       }
       .disposed(by: bag)
 
@@ -63,6 +69,7 @@ class LoginViewController: SceneViewController<LoginView> {
         switch action {
         case .loginFailed:
           contentView.errorMessage.text = "Email ou senha incorretos!"
+          contentView.loginButton.shakeButton()
         }
       }
       .disposed(by: bag)
