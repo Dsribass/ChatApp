@@ -16,6 +16,7 @@
 		951521B3294A3E2D00FF6175 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951521B2294A3E2D00FF6175 /* AuthCoordinator.swift */; };
 		951521C1294A5C1D00FF6175 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951521B9294A5BDC00FF6175 /* Domain.framework */; };
 		951521C8294A5C6100FF6175 /* ValidateEmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951521C7294A5C6100FF6175 /* ValidateEmailAddress.swift */; };
+		954460FF29EF1CC70052B6B0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954460FE29EF1CC70052B6B0 /* Message.swift */; };
 		9562B85F294B40DC00F6BCC3 /* ValidateEmailAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562B85E294B40DC00F6BCC3 /* ValidateEmailAddressTests.swift */; };
 		9562B860294B40DC00F6BCC3 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951521B9294A5BDC00FF6175 /* Domain.framework */; };
 		9562B869294BB28300F6BCC3 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562B868294BB28300F6BCC3 /* ValidationResult.swift */; };
@@ -40,6 +41,8 @@
 		958DE8B0298A021600BEC419 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DE8AF298A021600BEC419 /* UserState.swift */; };
 		95A07B3B298D3CB400FB29F4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A07B3A298D3CB400FB29F4 /* SearchViewController.swift */; };
 		95A07B3D298D3CC900FB29F4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A07B3C298D3CC900FB29F4 /* SearchView.swift */; };
+		95A07B3F29AE29A500FB29F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A07B3E29AE29A500FB29F4 /* User.swift */; };
+		95A07B4129AE29E400FB29F4 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A07B4029AE29E400FB29F4 /* Conversation.swift */; };
 		95F041D129423B2900818D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D029423B2900818D6B /* AppDelegate.swift */; };
 		95F041D329423B2900818D6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F041D229423B2900818D6B /* SceneDelegate.swift */; };
 		95F041DA29423B2A00818D6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F041D929423B2A00818D6B /* Assets.xcassets */; };
@@ -79,6 +82,7 @@
 		951521B2294A3E2D00FF6175 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		951521B9294A5BDC00FF6175 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		951521C7294A5C6100FF6175 /* ValidateEmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailAddress.swift; sourceTree = "<group>"; };
+		954460FE29EF1CC70052B6B0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		9562B85C294B40DC00F6BCC3 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9562B85E294B40DC00F6BCC3 /* ValidateEmailAddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailAddressTests.swift; sourceTree = "<group>"; };
 		9562B868294BB28300F6BCC3 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 		958DE8AF298A021600BEC419 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		95A07B3A298D3CB400FB29F4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		95A07B3C298D3CC900FB29F4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		95A07B3E29AE29A500FB29F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		95A07B4029AE29E400FB29F4 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		95F041CE29423B2900818D6B /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F041D029423B2900818D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F041D229423B2900818D6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +231,9 @@
 			children = (
 				9562B868294BB28300F6BCC3 /* ValidationResult.swift */,
 				958DE8AF298A021600BEC419 /* UserState.swift */,
+				95A07B3E29AE29A500FB29F4 /* User.swift */,
+				95A07B4029AE29E400FB29F4 /* Conversation.swift */,
+				954460FE29EF1CC70052B6B0 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,9 +536,12 @@
 				951521C8294A5C6100FF6175 /* ValidateEmailAddress.swift in Sources */,
 				9562B869294BB28300F6BCC3 /* ValidationResult.swift in Sources */,
 				958DE89F2970BA6700BEC419 /* AuthRepository.swift in Sources */,
+				95A07B4129AE29E400FB29F4 /* Conversation.swift in Sources */,
 				958DE89A29703F0D00BEC419 /* LogInUser.swift in Sources */,
 				958DE89C2970456F00BEC419 /* SignUpUser.swift in Sources */,
 				9562B86C294BB2FA00F6BCC3 /* ValidatePassword.swift in Sources */,
+				954460FF29EF1CC70052B6B0 /* Message.swift in Sources */,
+				95A07B3F29AE29A500FB29F4 /* User.swift in Sources */,
 				958DE8A42977215000BEC419 /* ListenUserAuthChanges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
