@@ -17,6 +17,10 @@
 		951521C1294A5C1D00FF6175 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951521B9294A5BDC00FF6175 /* Domain.framework */; };
 		951521C8294A5C6100FF6175 /* ValidateEmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951521C7294A5C6100FF6175 /* ValidateEmailAddress.swift */; };
 		954460FF29EF1CC70052B6B0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954460FE29EF1CC70052B6B0 /* Message.swift */; };
+		9544610129F0251D0052B6B0 /* GetUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610029F0251D0052B6B0 /* GetUserInformation.swift */; };
+		9544610329F025D90052B6B0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610229F025D90052B6B0 /* UserRepository.swift */; };
+		9544610529F026410052B6B0 /* ConversationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610429F026410052B6B0 /* ConversationRepository.swift */; };
+		9544610729F0278C0052B6B0 /* GetConversationsFromUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610629F0278C0052B6B0 /* GetConversationsFromUser.swift */; };
 		9562B85F294B40DC00F6BCC3 /* ValidateEmailAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562B85E294B40DC00F6BCC3 /* ValidateEmailAddressTests.swift */; };
 		9562B860294B40DC00F6BCC3 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951521B9294A5BDC00FF6175 /* Domain.framework */; };
 		9562B869294BB28300F6BCC3 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562B868294BB28300F6BCC3 /* ValidationResult.swift */; };
@@ -83,6 +87,10 @@
 		951521B9294A5BDC00FF6175 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		951521C7294A5C6100FF6175 /* ValidateEmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailAddress.swift; sourceTree = "<group>"; };
 		954460FE29EF1CC70052B6B0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9544610029F0251D0052B6B0 /* GetUserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInformation.swift; sourceTree = "<group>"; };
+		9544610229F025D90052B6B0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		9544610429F026410052B6B0 /* ConversationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRepository.swift; sourceTree = "<group>"; };
+		9544610629F0278C0052B6B0 /* GetConversationsFromUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConversationsFromUser.swift; sourceTree = "<group>"; };
 		9562B85C294B40DC00F6BCC3 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9562B85E294B40DC00F6BCC3 /* ValidateEmailAddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailAddressTests.swift; sourceTree = "<group>"; };
 		9562B868294BB28300F6BCC3 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
@@ -205,6 +213,8 @@
 				958DE89929703F0D00BEC419 /* LogInUser.swift */,
 				958DE89B2970456F00BEC419 /* SignUpUser.swift */,
 				958DE8A32977215000BEC419 /* ListenUserAuthChanges.swift */,
+				9544610029F0251D0052B6B0 /* GetUserInformation.swift */,
+				9544610629F0278C0052B6B0 /* GetConversationsFromUser.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -262,6 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				958DE89E2970BA6700BEC419 /* AuthRepository.swift */,
+				9544610229F025D90052B6B0 /* UserRepository.swift */,
+				9544610429F026410052B6B0 /* ConversationRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -533,13 +545,17 @@
 			files = (
 				958DE8B0298A021600BEC419 /* UserState.swift in Sources */,
 				9562B86E294BB43C00F6BCC3 /* ValidateName.swift in Sources */,
+				9544610129F0251D0052B6B0 /* GetUserInformation.swift in Sources */,
 				951521C8294A5C6100FF6175 /* ValidateEmailAddress.swift in Sources */,
 				9562B869294BB28300F6BCC3 /* ValidationResult.swift in Sources */,
 				958DE89F2970BA6700BEC419 /* AuthRepository.swift in Sources */,
 				95A07B4129AE29E400FB29F4 /* Conversation.swift in Sources */,
 				958DE89A29703F0D00BEC419 /* LogInUser.swift in Sources */,
+				9544610529F026410052B6B0 /* ConversationRepository.swift in Sources */,
 				958DE89C2970456F00BEC419 /* SignUpUser.swift in Sources */,
+				9544610729F0278C0052B6B0 /* GetConversationsFromUser.swift in Sources */,
 				9562B86C294BB2FA00F6BCC3 /* ValidatePassword.swift in Sources */,
+				9544610329F025D90052B6B0 /* UserRepository.swift in Sources */,
 				954460FF29EF1CC70052B6B0 /* Message.swift in Sources */,
 				95A07B3F29AE29A500FB29F4 /* User.swift in Sources */,
 				958DE8A42977215000BEC419 /* ListenUserAuthChanges.swift in Sources */,
