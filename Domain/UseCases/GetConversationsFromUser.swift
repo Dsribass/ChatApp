@@ -8,7 +8,7 @@
 import RxSwift
 
 public protocol GetConversationsFromUserUseCase {
-  func execute(userId: String) -> Single<[Conversation]>
+  func execute(userId: String) -> Observable<[Conversation]>
 }
 
 public class GetConversationsFromUser: GetConversationsFromUserUseCase {
@@ -18,7 +18,7 @@ public class GetConversationsFromUser: GetConversationsFromUserUseCase {
     self.repository = repository
   }
 
-  public func execute(userId: String) -> Single<[Conversation]> {
+  public func execute(userId: String) -> Observable<[Conversation]> {
     repository.getConversations(from: userId)
   }
 }

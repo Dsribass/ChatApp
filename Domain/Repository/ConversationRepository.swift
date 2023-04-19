@@ -8,5 +8,5 @@
 import RxSwift
 
 public protocol ConversationRepository {
-  func getConversations(from userId: String) -> Single<[Conversation]>
+  func getConversations(from userId: String) -> Observable<[Conversation]>
 }
