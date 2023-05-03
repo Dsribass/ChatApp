@@ -8,15 +8,22 @@
 import RxSwift
 
 public protocol GetUserInformationUseCase {
-  func execute() -> Single<User>
+  func execute(userId: String) -> Single<User>
+  func execute(userEmail: String) -> Single<User>
 }
 
 public class GetUserInformation: GetUserInformationUseCase {
   private let repository: UserRepository
 
-  init(repository: UserRepository) {
+  public init(repository: UserRepository) {
     self.repository = repository
   }
 
-  public func execute() -> Single<User> { repository.getUser() }
+  public func execute(userId: String) -> Single<User> {
+    repository.getUser(byId: userId)
+  }
+
+  public func execute(userEmail: String) -> Single<User> {
+    repository.getUser(byEmail: userEmail)
+  }
 }

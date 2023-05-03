@@ -8,5 +8,6 @@
 import RxSwift
 
 public protocol UserRepository {
-  func getUser() -> Single<User>
+  func getUser(byEmail: String) -> Single<User>
+  func getUser(byId: String) -> Single<User>
 }
