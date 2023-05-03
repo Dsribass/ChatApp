@@ -9,7 +9,7 @@ import RxSwift
 
 public protocol AuthRepository {
   func userAuthChanges() -> Observable<UserState>
-  func signIn(withEmail email: String, andPassword password: String) -> Completable
-  func signUp(withEmail email: String, andPassword password: String) -> Completable
-  func saveUserName(_ name: String) -> Completable
+  func signIn(withEmail email: String, andPassword password: String) -> Single<String>
+  func signUp(withEmail email: String, andPassword password: String) -> Single<String>
+  func getLoggedUserId() -> Single<String>
 }

@@ -8,6 +8,7 @@
 import RxSwift
 
 public protocol UserRepository {
+  func saveUser(_ user: User) -> Completable
   func getUser(byEmail: String) -> Single<User>
   func getUser(byId: String) -> Single<User>
 }

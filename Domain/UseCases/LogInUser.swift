@@ -22,6 +22,6 @@ public class LogInUser: LogInUserUseCase {
     withEmail email: String,
     andPassword password: String
   ) -> Completable {
-    repository.signIn(withEmail: email, andPassword: password)
+    repository.signIn(withEmail: email, andPassword: password).asCompletable()
   }
 }

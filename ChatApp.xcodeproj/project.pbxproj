@@ -22,6 +22,7 @@
 		9544610529F026410052B6B0 /* ConversationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610429F026410052B6B0 /* ConversationRepository.swift */; };
 		9544610729F0278C0052B6B0 /* GetUserConversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610629F0278C0052B6B0 /* GetUserConversations.swift */; };
 		9544610D29F9A53D0052B6B0 /* ConversationChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610C29F9A53D0052B6B0 /* ConversationChannel.swift */; };
+		9544610F2A02A73B0052B6B0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610E2A02A73B0052B6B0 /* Errors.swift */; };
 		9562B85F294B40DC00F6BCC3 /* ValidateEmailAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562B85E294B40DC00F6BCC3 /* ValidateEmailAddressTests.swift */; };
 		9562B860294B40DC00F6BCC3 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951521B9294A5BDC00FF6175 /* Domain.framework */; };
 		9562B869294BB28300F6BCC3 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562B868294BB28300F6BCC3 /* ValidationResult.swift */; };
@@ -92,6 +93,7 @@
 		9544610429F026410052B6B0 /* ConversationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRepository.swift; sourceTree = "<group>"; };
 		9544610629F0278C0052B6B0 /* GetUserConversations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserConversations.swift; sourceTree = "<group>"; };
 		9544610C29F9A53D0052B6B0 /* ConversationChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationChannel.swift; sourceTree = "<group>"; };
+		9544610E2A02A73B0052B6B0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		9562B85C294B40DC00F6BCC3 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9562B85E294B40DC00F6BCC3 /* ValidateEmailAddressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailAddressTests.swift; sourceTree = "<group>"; };
 		9562B868294BB28300F6BCC3 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				951521AE2949FF1800FF6175 /* Coordinator.swift */,
 				958DE8A52982FA1300BEC419 /* Factory.swift */,
+				9544610E2A02A73B0052B6B0 /* Errors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				951521B3294A3E2D00FF6175 /* AuthCoordinator.swift in Sources */,
 				958DE8AE2989996900BEC419 /* MainCoordinator.swift in Sources */,
 				958DE8AA298997F900BEC419 /* ConversationsViewController.swift in Sources */,
+				9544610F2A02A73B0052B6B0 /* Errors.swift in Sources */,
 				95F4DE38294CEB63004176AF /* LoginViewModel.swift in Sources */,
 				95F041F029423EEE00818D6B /* SceneViewController.swift in Sources */,
 				95A07B3D298D3CC900FB29F4 /* SearchView.swift in Sources */,

@@ -12,10 +12,12 @@ public protocol SignUpUserUseCase {
 }
 
 public class SignUpUser: SignUpUserUseCase {
-  private let repository: AuthRepository
+  private let authRepository: AuthRepository
+  private let userRepository: UserRepository
 
-  public init(repository: AuthRepository) {
-    self.repository = repository
+  public init(authRepository: AuthRepository, userRepository: UserRepository) {
+    self.authRepository = authRepository
+    self.userRepository = userRepository
   }
 
   public func execute(
@@ -23,8 +25,10 @@ public class SignUpUser: SignUpUserUseCase {
     email: String,
     andPassword password: String
   ) -> Completable {
-    repository
+    authRepository
       .signUp(withEmail: email, andPassword: password)
-      .andThen(repository.saveUserName(name))
+      .flatMapCompletable { [unowned self] id in
+        self.userRepository.saveUser(User(id: id, name: name, email: email, photoUrl: ""))
+      }
   }
 }

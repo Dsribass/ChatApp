@@ -10,28 +10,46 @@ import Domain
 import FirebaseAuth
 
 class FirebaseAuthRepository: AuthRepository {
-  func signIn(withEmail email: String, andPassword password: String) -> Completable {
-    Completable.create { completable in
+  func getLoggedUserId() -> Single<String> {
+    let user = Auth.auth().currentUser
+
+    guard let user = user else {
+      return Single.error(ApplicationErrors.itemNotFound)
+    }
+
+    return Single.just(user.uid)
+  }
+
+  func signIn(withEmail email: String, andPassword password: String) -> Single<String> {
+    Single.create { completable in
       Auth.auth().signIn(withEmail: email, password: password) { result, error in
         if let error = error {
-          completable(.error(error))
+          return completable(.failure(error))
         }
 
-        completable(.completed)
+        guard let result = result else {
+          return completable(.failure(ApplicationErrors.itemNotFound))
+        }
+
+        completable(.success(result.user.uid))
       }
 
       return Disposables.create()
     }
   }
 
-  func signUp(withEmail email: String, andPassword password: String) -> Completable {
-    Completable.create { completable in
+  func signUp(withEmail email: String, andPassword password: String) -> Single<String> {
+    Single.create { completable in
       Auth.auth().createUser(withEmail: email, password: password) { result, error in
         if let error = error {
-          completable(.error(error))
+          return completable(.failure(error))
         }
 
-        completable(.completed)
+        guard let result = result else {
+          return completable(.failure(ApplicationErrors.itemNotFound))
+        }
+
+        completable(.success(result.user.uid))
       }
 
       return Disposables.create()
@@ -43,20 +61,6 @@ class FirebaseAuthRepository: AuthRepository {
       Auth.auth().addStateDidChangeListener { _, user in
         observer.onNext(user != nil ? .loggedIn : .loggedOut)
       }
-      return Disposables.create()
-    }
-  }
-
-  func saveUserName(_ name: String) -> Completable {
-    Completable.create { completable in
-      let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-      changeRequest?.displayName = name
-      changeRequest?.commitChanges { error in
-        if let error = error { completable(.error(error)) }
-
-        completable(.completed)
-      }
-
       return Disposables.create()
     }
   }
