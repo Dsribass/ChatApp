@@ -22,8 +22,4 @@ public class GetUserInformation: GetUserInformationUseCase {
   public func execute(userId: String) -> Single<User> {
     repository.getUser(byId: userId)
   }
-
-  public func execute(userEmail: String) -> Single<User> {
-    repository.getUser(byEmail: userEmail)
-  }
 }

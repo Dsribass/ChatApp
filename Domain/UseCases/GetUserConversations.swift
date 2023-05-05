@@ -28,12 +28,4 @@ public class GetUserConversations: GetUserConversationsUseCase {
         conversationRepository.getConversations(from: user)
       }
   }
-
-  public func execute(userEmail: String) -> Observable<[ConversationChannel]> {
-    userRepository.getUser(byEmail: userEmail)
-      .asObservable()
-      .concatMap { [unowned self] user in
-        conversationRepository.getConversations(from: user)
-      }
-  }
 }

@@ -222,6 +222,14 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		952A57C72A0595B200FFAEA5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				958DE8A02970BB0600BEC419 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		9562B85D294B40DC00F6BCC3 /* DomainTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,7 +349,7 @@
 		95F041CF29423B2900818D6B /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				958DE8A02970BB0600BEC419 /* Repository */,
+				952A57C72A0595B200FFAEA5 /* Data */,
 				951521AD2949FF0F00FF6175 /* Utils */,
 				95F041E229423B3200818D6B /* Application */,
 				95F041E329423B4000818D6B /* Scenes */,
