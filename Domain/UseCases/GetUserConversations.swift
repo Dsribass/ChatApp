@@ -9,7 +9,6 @@ import RxSwift
 
 public protocol GetUserConversationsUseCase {
   func execute(userId: String) -> Observable<[ConversationChannel]>
-  func execute(userEmail: String) -> Observable<[ConversationChannel]>
 }
 
 public class GetUserConversations: GetUserConversationsUseCase {

@@ -9,7 +9,6 @@ import RxSwift
 
 public protocol GetUserInformationUseCase {
   func execute(userId: String) -> Single<User>
-  func execute(userEmail: String) -> Single<User>
 }
 
 public class GetUserInformation: GetUserInformationUseCase {

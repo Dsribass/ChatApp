@@ -9,9 +9,18 @@ import Foundation
 import Domain
 
 enum Factory {
+  // MARK: DataSources
+  static func makeUserRemoteDS() -> UserRemoteDataSource {
+    UserRemoteDataSource()
+  }
+
   // MARK: Repositories
   static func makeAuthRepository() -> AuthRepository {
     FirebaseAuthRepository()
+  }
+
+  static func makeUserRepository() -> UserRepository {
+    BaseUserRepository(userRemoteDS: makeUserRemoteDS())
   }
 
   // MARK: Use Cases
@@ -28,7 +37,7 @@ enum Factory {
   }
 
   static func makeSignUpUser() -> SignUpUserUseCase {
-    SignUpUser(repository: makeAuthRepository())
+    SignUpUser(authRepository: makeAuthRepository(), userRepository: makeUserRepository())
   }
 
   static func makeLogInUser() -> LogInUserUseCase {

@@ -10,4 +10,11 @@ public struct User {
   public let name: String
   public let email: String
   public let photoUrl: String
+
+  public init(id: String, name: String, email: String, photoUrl: String) {
+    self.id = id
+    self.name = name
+    self.email = email
+    self.photoUrl = photoUrl
+  }
 }

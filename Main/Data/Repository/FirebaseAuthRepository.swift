@@ -14,7 +14,7 @@ class FirebaseAuthRepository: AuthRepository {
     let user = Auth.auth().currentUser
 
     guard let user = user else {
-      return Single.error(ApplicationErrors.itemNotFound)
+      return Single.error(DataError.itemNotFound)
     }
 
     return Single.just(user.uid)
@@ -28,7 +28,7 @@ class FirebaseAuthRepository: AuthRepository {
         }
 
         guard let result = result else {
-          return completable(.failure(ApplicationErrors.itemNotFound))
+          return completable(.failure(DataError.itemNotFound))
         }
 
         completable(.success(result.user.uid))
@@ -46,7 +46,7 @@ class FirebaseAuthRepository: AuthRepository {
         }
 
         guard let result = result else {
-          return completable(.failure(ApplicationErrors.itemNotFound))
+          return completable(.failure(DataError.itemNotFound))
         }
 
         completable(.success(result.user.uid))

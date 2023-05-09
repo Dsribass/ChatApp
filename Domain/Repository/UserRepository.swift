@@ -9,5 +9,5 @@ import RxSwift
 
 public protocol UserRepository {
   func saveUser(_ user: User) -> Completable
-  func getUser(byId: String) -> Single<User>
+  func getUser(byId id: String) -> Single<User>
 }
