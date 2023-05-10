@@ -1,5 +1,5 @@
 //
-//  GetUserInformation.swift
+//  GetUser.swift
 //  Domain
 //
 //  Created by Daniel de Souza Ribas on 19/04/23.
@@ -7,11 +7,11 @@
 
 import RxSwift
 
-public protocol GetUserInformationUseCase {
+public protocol GetUserUseCase {
   func execute(userId: String) -> Single<User>
 }
 
-public class GetUserInformation: GetUserInformationUseCase {
+public class GetUser: GetUserUseCase {
   private let repository: UserRepository
 
   public init(repository: UserRepository) {

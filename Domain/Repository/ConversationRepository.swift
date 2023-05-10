@@ -8,7 +8,7 @@
 import RxSwift
 
 public protocol ConversationRepository {
+  func addConversation(_ conversation: ConversationChannel) -> Completable
   func getConversations(from user: User) -> Observable<[ConversationChannel]>
-  func getConversationChannel(byId id: Int) -> Single<ConversationChannel>
-  func sendMessage(_ message: Message, to user: User) -> Completable
+  func sendMessage(_ message: Message) -> Completable
 }
