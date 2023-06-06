@@ -89,4 +89,4 @@ fastlane/test_output
 iOSInjectionProject/
 
 # Firebase Api key
-/GoogleService-Info.plist
+Main/GoogleService-Info.plist
