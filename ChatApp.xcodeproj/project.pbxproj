@@ -28,10 +28,8 @@
 		952A57D82A09663F00FFAEA5 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 952A57D72A09663F00FFAEA5 /* FirebaseMessaging */; };
 		952A57DA2A0AD9A600FFAEA5 /* SendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A57D92A0AD9A600FFAEA5 /* SendMessage.swift */; };
 		952A57DC2A0BC61D00FFAEA5 /* GetLoggedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A57DB2A0BC61D00FFAEA5 /* GetLoggedUser.swift */; };
-		952A57DE2A0C19F900FFAEA5 /* BaseConversationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A57DD2A0C19F900FFAEA5 /* BaseConversationRepository.swift */; };
 		952A57E02A0C2B4000FFAEA5 /* MessageRemoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A57DF2A0C2B4000FFAEA5 /* MessageRemoteModel.swift */; };
 		952A57E22A0C2EC200FFAEA5 /* RemoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A57E12A0C2EC200FFAEA5 /* RemoteModel.swift */; };
-		952A57E42A0C31AB00FFAEA5 /* ConversationRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A57E32A0C31AB00FFAEA5 /* ConversationRemoteDataSource.swift */; };
 		954460FF29EF1CC70052B6B0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954460FE29EF1CC70052B6B0 /* Message.swift */; };
 		9544610329F025D90052B6B0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610229F025D90052B6B0 /* UserRepository.swift */; };
 		9544610529F026410052B6B0 /* ConversationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544610429F026410052B6B0 /* ConversationRepository.swift */; };
@@ -104,10 +102,8 @@
 		952A57D02A092F8400FFAEA5 /* UserRemoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRemoteModel.swift; sourceTree = "<group>"; };
 		952A57D92A0AD9A600FFAEA5 /* SendMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessage.swift; sourceTree = "<group>"; };
 		952A57DB2A0BC61D00FFAEA5 /* GetLoggedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLoggedUser.swift; sourceTree = "<group>"; };
-		952A57DD2A0C19F900FFAEA5 /* BaseConversationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConversationRepository.swift; sourceTree = "<group>"; };
 		952A57DF2A0C2B4000FFAEA5 /* MessageRemoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRemoteModel.swift; sourceTree = "<group>"; };
 		952A57E12A0C2EC200FFAEA5 /* RemoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteModel.swift; sourceTree = "<group>"; };
-		952A57E32A0C31AB00FFAEA5 /* ConversationRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRemoteDataSource.swift; sourceTree = "<group>"; };
 		954460FE29EF1CC70052B6B0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		9544610229F025D90052B6B0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		9544610429F026410052B6B0 /* ConversationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRepository.swift; sourceTree = "<group>"; };
@@ -280,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				952A57CC2A092F1800FFAEA5 /* UserRemoteDataSource.swift */,
-				952A57E32A0C31AB00FFAEA5 /* ConversationRemoteDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -349,7 +344,6 @@
 			children = (
 				958DE8A12970BB1400BEC419 /* FirebaseAuthRepository.swift */,
 				952A57C92A05983000FFAEA5 /* BaseUserRepository.swift */,
-				952A57DD2A0C19F900FFAEA5 /* BaseConversationRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -652,10 +646,8 @@
 			files = (
 				951521B1294A0EDC00FF6175 /* AppCoordinator.swift in Sources */,
 				951521B3294A3E2D00FF6175 /* AuthCoordinator.swift in Sources */,
-				952A57DE2A0C19F900FFAEA5 /* BaseConversationRepository.swift in Sources */,
 				958DE8AE2989996900BEC419 /* MainCoordinator.swift in Sources */,
 				958DE8AA298997F900BEC419 /* ConversationsViewController.swift in Sources */,
-				952A57E42A0C31AB00FFAEA5 /* ConversationRemoteDataSource.swift in Sources */,
 				952A57CA2A05983000FFAEA5 /* BaseUserRepository.swift in Sources */,
 				9544610F2A02A73B0052B6B0 /* DataError.swift in Sources */,
 				95F4DE38294CEB63004176AF /* LoginViewModel.swift in Sources */,
