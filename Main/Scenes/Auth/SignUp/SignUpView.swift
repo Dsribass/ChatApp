@@ -9,12 +9,7 @@ import UIKit
 import SnapKit
 
 class SignUpView: UIViewCodable {
-  lazy var title: UILabel = {
-    let label = UILabel()
-    label.font = UIFont.boldSystemFont(ofSize: 32)
-    label.text = "Cadastro"
-    return label
-  }()
+  static let title = "Cadastro"
 
   lazy var form: UIStackView = {
     let stack = UIStackView()
@@ -66,8 +61,6 @@ class SignUpView: UIViewCodable {
 
   override func setupSubviews() {
     super.setupSubviews()
-    addSubview(title)
-
     addSubview(form)
     form.addArrangedSubview(nameTextField)
     form.addArrangedSubview(emailTextField)
@@ -80,14 +73,8 @@ class SignUpView: UIViewCodable {
   override func setupConstraints() {
     super.setupConstraints()
 
-    title.snp.makeConstraints { make in
-      make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(48)
-      make.leading.equalTo(self).offset(24)
-      make.trailing.equalTo(self).offset(-24)
-    }
-
     form.snp.makeConstraints { make in
-      make.top.equalTo(title.snp.bottom).offset(32)
+      make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(8)
       make.leading.equalTo(self).offset(24)
       make.trailing.equalTo(self).offset(-24)
     }

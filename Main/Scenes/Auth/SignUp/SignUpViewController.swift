@@ -21,6 +21,8 @@ class SignUpViewController: SceneViewController<SignUpView> {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = SignUpView.title
+    navigationController?.navigationBar.prefersLargeTitles = true
     setupObservables()
   }
 

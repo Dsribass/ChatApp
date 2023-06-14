@@ -35,12 +35,13 @@ class TextFieldContainer: UIViewCodable {
 
   lazy var label: UILabel = {
     let label = UILabel()
-    label.font = UIFont.preferredFont(forTextStyle: .body)
+    label.font = UIFont.preferredFont(forTextStyle: .headline)
     return label
   }()
 
   lazy var textField: UITextField = {
     let textField = UITextField()
+    textField.backgroundColor = .tertiarySystemBackground
     textField.borderStyle = .roundedRect
     return textField
   }()
