@@ -31,4 +31,14 @@ extension MainCoordinator: ConversationsViewRouter {
 
     navigationController.viewControllers[0].present(searchViewController, animated: true)
   }
+
+  func navigateToProfileView() {
+    let profileVC = UINavigationController(rootViewController: ProfileViewController())
+    profileVC.modalPresentationStyle = .pageSheet
+    if let sheet = profileVC.sheetPresentationController {
+      sheet.detents = [.large()]
+    }
+
+    navigationController.viewControllers[0].present(profileVC, animated: true)
+  }
 }

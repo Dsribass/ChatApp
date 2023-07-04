@@ -16,6 +16,7 @@ class SearchView: UIViewCodable {
 
   lazy var searchField: UITextField = {
     let textField = UITextField()
+    textField.backgroundColor = .tertiarySystemBackground
     textField.borderStyle = .roundedRect
     textField.clearButtonMode = .always
     return textField
@@ -23,6 +24,7 @@ class SearchView: UIViewCodable {
 
   lazy var usersTableView: UITableView = {
     let table = UITableView()
+    table.backgroundColor = .secondarySystemBackground
     table.separatorStyle = .none
     table.register(
       UITableViewCell.self,
@@ -32,7 +34,7 @@ class SearchView: UIViewCodable {
 
   override func setupLayout() {
     super.setupLayout()
-    backgroundColor = .systemBackground
+    backgroundColor = .secondarySystemBackground
   }
 
   override func setupSubviews() {

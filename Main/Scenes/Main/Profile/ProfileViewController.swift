@@ -1,40 +1,40 @@
 //
-//  SearchViewController.swift
+//  ProfileViewController.swift
 //  Main
 //
-//  Created by Daniel de Souza Ribas on 03/02/23.
+//  Created by Daniel de Souza Ribas on 16/06/23.
 //
 
 import UIKit
 
-class SearchViewController: SceneViewController<SearchView> {
+class ProfileViewController: SceneViewController<ProfileView> {
   override func setupLayout() {
     super.setupLayout()
-    title = SearchView.title
+    title = ProfileView.title
   }
 
   override func additionalConfigurations() {
     super.additionalConfigurations()
-    contentView.usersTableView.delegate = self
-    contentView.usersTableView.dataSource = self
+    contentView.profileTableView.delegate = self
+    contentView.profileTableView.dataSource = self
   }
 }
 
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    20
+    5
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = contentView.usersTableView.dequeueReusableCell(withIdentifier: SearchView.userCellIdentifier)!
+    let cell = contentView.profileTableView.dequeueReusableCell(withIdentifier: ProfileView.profileCellIdentifier)!
     var config = UIListContentConfiguration.cell()
     config.text = "Usuario \(indexPath.row)"
-    cell.backgroundColor = .secondarySystemBackground
+    cell.backgroundColor = .systemBackground
     cell.contentConfiguration = config
     return cell
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    contentView.usersTableView.deselectRow(at: indexPath, animated: true)
+    contentView.profileTableView.deselectRow(at: indexPath, animated: true)
   }
 }

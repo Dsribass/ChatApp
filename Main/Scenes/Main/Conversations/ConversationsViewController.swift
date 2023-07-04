@@ -22,8 +22,12 @@ class ConversationsViewController: SceneViewController<ConversationsView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    navigationItem.rightBarButtonItem?.rx.tap
+    contentView.addNewChatButton.rx.tap
       .bind { [weak self] in self?.router.navigateToSearchView() }
+      .disposed(by: bag)
+
+    contentView.accountButton.rx.tap
+      .bind { [weak self] in self?.router.navigateToProfileView() }
       .disposed(by: bag)
   }
 
@@ -31,7 +35,9 @@ class ConversationsViewController: SceneViewController<ConversationsView> {
     super.setupLayout()
     title = ConversationsView.title
     navigationController?.navigationBar.prefersLargeTitles = true
-    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: .none, action: .none)
+    navigationItem.rightBarButtonItems = [
+      contentView.accountButton,
+      contentView.addNewChatButton]
   }
 
   override func additionalConfigurations() {
@@ -50,6 +56,7 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
     let cell = contentView.conversations.dequeueReusableCell(withIdentifier: ConversationsView.cellIdentifier)!
     var config = UIListContentConfiguration.cell()
     config.text = "Usuario \(indexPath.row)"
+    cell.backgroundColor = .secondarySystemBackground
     cell.accessoryType = .disclosureIndicator
     cell.contentConfiguration = config
     return cell
@@ -62,4 +69,5 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
 
 protocol ConversationsViewRouter {
   func navigateToSearchView()
+  func navigateToProfileView()
 }

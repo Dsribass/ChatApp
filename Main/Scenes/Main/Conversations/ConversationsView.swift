@@ -9,8 +9,24 @@ import UIKit
 import SnapKit
 
 class ConversationsView: UIViewCodable {
-  static let title = "Chat"
+  static let title = "Conversas"
   static let cellIdentifier = "chatCell"
+
+  lazy var addNewChatButton: UIBarButtonItem = {
+    UIBarButtonItem(
+      image: UIImage(systemName: "square.and.pencil"),
+      style: .plain,
+      target: .none,
+      action: .none)
+  }()
+
+  lazy var accountButton: UIBarButtonItem = {
+    UIBarButtonItem(
+      image: UIImage(systemName: "person.crop.circle.fill"),
+      style: .plain,
+      target: .none,
+      action: .none)
+  }()
 
   lazy var conversations: UITableView = {
     let table = UITableView()
@@ -23,7 +39,7 @@ class ConversationsView: UIViewCodable {
 
   override func setupLayout() {
     super.setupLayout()
-    backgroundColor = .systemBackground
+    conversations.backgroundColor = .secondarySystemBackground
   }
 
   override func setupSubviews() {
