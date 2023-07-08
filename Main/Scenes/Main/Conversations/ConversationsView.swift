@@ -31,7 +31,7 @@ class ConversationsView: UIViewCodable {
   lazy var conversations: UITableView = {
     let table = UITableView()
     table.register(
-      UITableViewCell.self,
+      ConversationCell.self,
       forCellReuseIdentifier: ConversationsView.cellIdentifier)
 
     return table

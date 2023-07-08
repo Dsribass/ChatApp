@@ -49,16 +49,14 @@ class ConversationsViewController: SceneViewController<ConversationsView> {
 
 extension ConversationsViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    5
+    10
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = contentView.conversations.dequeueReusableCell(withIdentifier: ConversationsView.cellIdentifier)!
-    var config = UIListContentConfiguration.cell()
-    config.text = "Usuario \(indexPath.row)"
-    cell.backgroundColor = .secondarySystemBackground
-    cell.accessoryType = .disclosureIndicator
-    cell.contentConfiguration = config
+    let cell = contentView.conversations.dequeueReusableCell(withIdentifier: ConversationsView.cellIdentifier) as? ConversationCell ?? ConversationCell(style: .default, reuseIdentifier: ConversationsView.cellIdentifier)
+
+    cell.configure(imageURL: URL(string: ""), name: "Development", lastMessage: "Culpa elit consequat officia veniam mollit esse non anim consequat anim tempor adipiscing mollit", numberOfUnreadMessages: indexPath.row)
+
     return cell
   }
 
