@@ -55,7 +55,12 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = contentView.conversations.dequeueReusableCell(withIdentifier: ConversationsView.cellIdentifier) as? ConversationCell ?? ConversationCell(style: .default, reuseIdentifier: ConversationsView.cellIdentifier)
 
-    cell.configure(imageURL: URL(string: ""), name: "Development", lastMessage: "Culpa elit consequat officia veniam mollit esse non anim consequat anim tempor adipiscing mollit", numberOfUnreadMessages: indexPath.row)
+    cell.configure(
+      imageURL: URL(string: ""),
+      name: "Development",
+      lastMessage: "Culpa elit consequat officia veniam mollit esse non anim consequat anim tempor adipiscing mollit",
+      date: Date(),
+      numberOfUnreadMessages: indexPath.row)
 
     return cell
   }
